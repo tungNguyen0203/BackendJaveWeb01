@@ -108,17 +108,4 @@ FOR EACH ROW
 			SET member_size = (old_department_id - 1)
 			WHERE id = OLD.department_id;
 	END $$
-/*    
--- update project
-DROP TRIGGER IF EXISTS update_project;
-DELIMITER $$
-	CREATE TRIGGER update_project
-	BEFORE UPDATE ON project
-	FOR EACH ROW
-		BEGIN
-        UPDATE project
-        SET member_size = member_size + 1
-        WHERE manager_id = NEW.manager_id;
-        
-	END $$
-*/    
+   

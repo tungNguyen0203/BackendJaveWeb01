@@ -40,9 +40,8 @@ public class Program {
 			System.out.println("3 - Xem thong tin project hien tai");
 			System.out.println("4 - Thoat");
 			System.out.print("Lua chon: ");
-			
 			int choose = ScannerUtils.inputNumber(1, 4);
-			
+			System.out.println("----------------------------------");
 			switch (choose) {
 			case 1:
 				userManager.printUser(user);
@@ -78,6 +77,7 @@ public class Program {
 			System.out.println("10 - Thoat");
 			System.out.print("Lua chon: ");
 			int choose = ScannerUtils.inputNumber(1, 10);
+			System.out.println("----------------------------------");
 			switch (choose) {
 			case 1:
 				userManager.printUser(user);

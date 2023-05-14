@@ -50,6 +50,15 @@ public class UserManager {
 		System.out.println("Department Name: " + user.getDepartment().getName());
 		System.out.println("Project Name: " + user.getProject().getName());
 		System.out.println("Manager Name: " + user.getFullnameManager());
+		
+		String role;
+		if (user.getRole()) {
+			role = "Manager";
+		} else {
+			role = "Employee";
+		}
+		
+		System.out.println("Role: " + role);
 	}
 	
 	public void getAllUsers() throws SQLException {
@@ -99,7 +108,14 @@ public class UserManager {
 		String inEmail = ScannerUtils.inputEmail();
 		
 		// tach username tu email
-		String inUsername = inEmail.substring(0, inEmail.indexOf("@"));
+		String inUsername;
+		while (true) {
+			inUsername = inEmail.substring(0, inEmail.indexOf("@"));
+			if (inUsername.length() < 5 || inUsername.length() > 20) {
+				continue;
+			}
+			break;
+		}
 		
 		String inPassword;
 		

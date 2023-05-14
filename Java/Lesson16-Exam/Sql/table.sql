@@ -56,5 +56,3 @@ CREATE TABLE manager (
 -- FOREIGN KEY project
 ALTER TABLE project
 ADD FOREIGN KEY(manager_id) REFERENCES `user`(id) ON DELETE SET NULL;		
-
-
